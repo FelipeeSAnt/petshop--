@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="car.css">
+</head>
+<body>
+
+    <header class="colornav">
+        <nav class="tamanho">
+           <a href=""><img src="telefone.png" alt="email" class="imagemnav"></a>
+           <a href=""><img src="email.png" alt="e-mail" class="imagemnav"></a>
+           <a href=""><img src="instalogo.png" alt="insta" class="imagemnav"></a>
+           <a href="car.html" target="_blank"><img src="Cart-icon.png" alt="carrinho" class="imagemnav"></a>
+           <center><img src="images.jpg" alt="logo" ></center>
+           <div class="search-bar">
+            <input type="text" placeholder="Digite sua pesquisa">
+            <button type="submit"><img src="Loupe-icon.png" alt="lupa" class="imagemnav"></button>
+           </div>
+    
+          <div class="ul">
+           <ul>
+            <a href=""><li>Home</li></a>
+            <a href=""><li>Sobre</li></a>
+            <a href=""><li>Serviços</li></a>
+            <a href=""><li>Contato</li></a>
+            <a href=""><li>telefone</li></a>
+           </ul>
+          </div>  
+        </nav>
+      </header>
+
+    <div class="container">
+        <h1>Meu Carrinho</h1>
+        
+        <div class="produto">
+            <img src="racaocachorro.jpg" alt="Ração para Cães">
+            <div class="produto-info">
+                <h2>Ração para Cães - 10kg</h2>
+                <span>Preço: R$ 50,00</span>
+                <span>Quantidade: <input type="text" value="1"> <button onclick="aumentarQuantidade(1)">+</button> <button onclick="diminuirQuantidade(1)">-</button></span>
+            </div>
+            <div class="valor">
+                R$ 50,00
+            </div>
+        </div>
+        <!-- Adicione mais produtos aqui conforme necessário -->
+
+        <div class="total">
+            <h2>Total do Pedido</h2>
+            <p>Subtotal: R$ <span id="subtotal">50,00</span></p>
+            <p>Valor do Frete: R$ <span id="frete">0,00</span></p>
+            <p>Total: R$ <span id="total">50,00</span></p>
+            <input type="text" placeholder="Digite seu CEP">
+            <button class="finalizar" onclick="calcularFrete()">Calcular Frete</button>
+            <button class="finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
+    </div>
+
+</body>
+</html>
