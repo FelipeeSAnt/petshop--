@@ -1,0 +1,153 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 20px auto; 
+}
+.ul{
+    text-align: center;
+  }
+a{
+    text-decoration: none;
+}  
+.search-bar input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    background-color: white;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.colornav {
+    background-color: #ffffff; 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: right; 
+}
+
+  header {
+   
+    background-color: #ffffff; 
+   
+  }
+  
+  header nav ul {
+    list-style-type: none;
+  }
+  
+  header nav ul li {
+    display: inline;
+    margin-right: 70px; 
+    font-size: 2em;
+    text-shadow: 1px 1px 4px black;
+    color: #333;
+  }
+  
+  .imagemnav {
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+  }
+  
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+.produto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+.produto img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+.produto-info {
+    flex: 1;
+}
+.produto-info h2 {
+    margin: 0;
+    color: #333;
+}
+.produto-info span {
+    display: block;
+    margin-bottom: 5px;
+}
+.quantidade {
+    display: flex;
+    align-items: center;
+}
+.quantidade button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+.quantidade button:hover {
+    background-color: #45a049;
+}
+.valor {
+    font-weight: bold;
+}
+.total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    width: 50%;
+    padding: 5px;
+    margin-top: 5px;
+
+}
+
+button.finalizar {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button.finalizar:hover {
+    background-color: #45a049;
+}
