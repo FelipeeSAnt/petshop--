@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="carrinho.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrinho de Compras</title>
+</head>
+<body>
+
+  <header class="colornav">
+    <nav class="tamanho">
+       
+      <a href=""><img src="img/telefone.png" alt="email" class="imagemnav"></a>
+       <a href=""><img src="img/email.png" alt="e-mail" class="imagemnav"></a>
+       <a href=""><img src="img/instalogo.png" alt="insta" class="imagemnav"></a>
+       <a href="carrinho.html" target="_blank"><img src="img/Cart-icon.png" alt="carrinho" class="imagemnav"></a>
+       <center><img src="img/images.jpg" alt="logo" ></center>
+       
+       <div class="search-bar">
+        <input type="text" placeholder="Digite sua pesquisa">
+        <button type="submit"><img src="img/Loupe-icon.png" alt="lupa" class="imagemnav"></button>
+       </div>
+
+      <div class="ul">
+       <ul>
+        <a href="index.html"><li>Home</li></a>
+        <a href="sobre.html"><li>Sobre</li></a>
+        <a href="servicos.html"><li>Serviços</li></a>
+        <a href="contato.html"><li>Contato</li></a>
+        <a href="Produtos.html"><li>Produtos</li></a>
+        <a href="blog.html"><li>Blog</li></a>
+       </ul>
+      </div>  
+   
+    </nav>
+  </header>
+
+   <h1>Meu carrinho:</h1>  
+  
+    <div class="total">
+      <h2>Total do Pedido</h2>
+      <div id="totalCarrinho"><strong>Total: R$ 0.00</strong></div>
+      <button class="finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+    </div> 
+   
+    <div class="consulta">
+      <h1>Consulta de CEP</h1>
+       <label for="cepInput">Digite o CEP:</label>
+       <input type="text" id="cepInput">
+       <button onclick="buscarEndereco()">Buscar</button>
+      <div id="endereco"></div>
+    </div>
+
+
+<ul id="cart"></ul>
+
+<script src="script.js"></script>
+
+<script>
+   
+ function displayCart() {
+
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    const cartList = document.getElementById('cart');
+
+    cartList.innerHTML = '';
+
+    if (cart && cart.length > 0) {
+        cart.forEach(item => {
+            const cartItem = document.createElement('li');
+
+            const itemImage = document.createElement('img');
+            itemImage.src = item.image;
+            itemImage.alt = item.name;
+            cartItem.appendChild(itemImage);
+
+            const itemName = document.createElement('p');
+            itemName.textContent = item.name;
+            cartItem.appendChild(itemName);
+
+            const itemPrice = document.createElement('p');
+            itemPrice.textContent = item.price;
+            cartItem.appendChild(itemPrice);
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remover';
+            removeButton.onclick = function() {
+                removerDoCarrinho(item.id);
+            };
+            cartItem.appendChild(removeButton);
+
+            cartList.appendChild(cartItem);
+
+        });
+    } else {
+        cartList.innerHTML = '<p>Carrinho vazio</p>';
+    }
+}
+
+function removerDoCarrinho(itemId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const index = cart.findIndex(item => item.id === itemId);
+    
+    if (index !== -1) {
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayCart();
+        calcularTotal();
+    }
+}
+
+function calcularTotal() {
+        let total = 0;
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        for (let item of cart) {
+            total += parseFloat(item.price.replace('R$ ', ''));
+        }
+
+        const totalCarrinhoElement = document.getElementById('totalCarrinho');
+        if (totalCarrinhoElement) {
+            totalCarrinhoElement.textContent = `Total: R$ ${total.toFixed(2)}`;
+        }
+    }
+
+    window.onload = function() {
+        displayCart();
+        calcularTotal();
+    };
+</script>
+</body>
+</html>

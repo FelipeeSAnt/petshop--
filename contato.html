@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contato.css">
+    <title>Contato</title>
+</head>
+<body>
+    
+  <header class="colornav">
+    <nav class="tamanho">
+       
+      <a href=""><img src="img/telefone.png" alt="email" class="imagemnav"></a>
+       <a href=""><img src="img/email.png" alt="e-mail" class="imagemnav"></a>
+       <a href=""><img src="img/instalogo.png" alt="insta" class="imagemnav"></a>
+       <a href="carrinho.html" target="_blank"><img src="img/Cart-icon.png" alt="carrinho" class="imagemnav"></a>
+       <center><img src="img/images.jpg" alt="logo" ></center>
+       
+       <div class="search-bar">
+        <input type="text" placeholder="Digite sua pesquisa">
+        <button type="submit"><img src="img/Loupe-icon.png" alt="lupa" class="imagemnav"></button>
+       </div>
+
+      <div class="ul">
+       <ul>
+        <a href="index.html"><li>Home</li></a>
+        <a href="sobre.html"><li>Sobre</li></a>
+        <a href="servicos.html"><li>Serviços</li></a>
+        <a href="contato.html"><li>Contato</li></a>
+        <a href="Produtos.html"><li>Produtos</li></a>
+        <a href="blog.html"><li>Blog</li></a>
+       </ul>
+      </div>  
+   
+    </nav>
+  </header>
+
+      <h1 id="titulo">Contato - Pet Shop</h1>
+
+
+      <main>
+        <form action="enviar.php" method="POST">
+          <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+          </div>
+          <div>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+          </div>
+          <div>
+            <input type="submit" value="Enviar">
+          </div>
+        </form>
+      </main>
+
+      
+      <footer>
+        <div class="links-importantes">
+          <a href="/politica-de-privacidade">Política de Privacidade</a>
+          <a href="/termos-de-servico">Termos de Serviço</a>
+          <a href="/mapa-do-site">Mapa do Site</a>
+        </div>
+      </footer>
+
+      
+</body>
+</html>
